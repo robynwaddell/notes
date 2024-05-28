@@ -27,16 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 content,
                 timestamp: new Date().toLocaleString()
             };
-            addNoteToUI(note);
+            addNoteToMenu(note);
             saveNoteToLocalStorage(note);
             formContainer.style.display = 'none';
             clearForm();
         } else {
-            alert('Please enter both title and content');
+            contentInput.value('Please enter both title and content');
         }
     }
 
-    function addNoteToUI(note) {
+    function addNoteToMenu(note) {
         const noteDiv = document.createElement('div');
         noteDiv.classList.add('note');
         
@@ -48,8 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         deleteButton.classList.add('delete');
         deleteButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
         deleteButton.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent note click event
-            deleteNoteFromUI(noteDiv);
+            e.stopPropagation(); // Prevent note click event, had to ask Chat GPT about this one
+            deleteNoteFromMenu(noteDiv);
             deleteNoteFromLocalStorage(note);
         });
         
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('notes', JSON.stringify(notes));
     }
 
-    function deleteNoteFromUI(noteDiv) {
+    function deleteNoteFromMenu(noteDiv) {
         notesContainer.removeChild(noteDiv);
     }
 
