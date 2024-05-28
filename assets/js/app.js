@@ -79,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
         notes.push(note);
         localStorage.setItem('notes', JSON.stringify(notes));
     }
+    // I am not sure why the local storage functions stopped working, I think it has something to do with the transfer to github, 
+    // I feel like I must have forgotten a step, because it was working in my computer before I began to move it over but not after
 
     function deleteNoteFromMenu(noteDiv) {
         notesContainer.removeChild(noteDiv);
