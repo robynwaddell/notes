@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* a css reset style sheet is a list of rules that reset almost all of the default styles*/
+/*(aka browser styles)*/
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border-style: none;
+    vertical-align: baseline;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+}
